@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import CoreData
 
 extension TaskRecord {
-    convenience init(taskID: UUID, startTime: Date?, endTime: Date?) {
+    convenience init(taskID: UUID, startTime: Date?, endTime: Date?, context: NSManagedObjectContext) {
         self.init()
         
         self.id = UUID()
@@ -17,12 +18,12 @@ extension TaskRecord {
         if let startTime = startTime {
             self.startTime = startTime
         } else {
-            startTime = Date()
+            self.startTime = Date()
         }
         if let endTime = endTime {
-            endTime = endTime
+            self.endTime = endTime
         } else {
-            endTime = Date()
+            self.endTime = Date()
         }
     }
 }
