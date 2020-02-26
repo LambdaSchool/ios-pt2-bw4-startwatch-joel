@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-enum TaskColor: Int {
+enum TaskColor: Int16 {
     case black = 0
     case red = 1
     case orange = 2

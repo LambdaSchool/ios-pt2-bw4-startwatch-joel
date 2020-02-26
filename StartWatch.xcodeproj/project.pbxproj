@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		5D1D603324064D7D00464EA1 /* UIColor+taskColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */; };
+		5D1D60352406510B00464EA1 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D60342406510B00464EA1 /* Task+Convenience.swift */; };
+		5D1D6037240654A200464EA1 /* Character+isEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D6036240654A200464EA1 /* Character+isEmoji.swift */; };
+		5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D60382406554F00464EA1 /* String+isEmoji.swift */; };
+		5D1D603B240655DA00464EA1 /* TaskFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D603A240655DA00464EA1 /* TaskFavorite.swift */; };
 		5DCC712524062D84008DD255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC712424062D84008DD255 /* AppDelegate.swift */; };
 		5DCC712724062D84008DD255 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCC712624062D84008DD255 /* SceneDelegate.swift */; };
 		5DCC712C24062D84008DD255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DCC712A24062D84008DD255 /* Main.storyboard */; };
@@ -72,6 +76,10 @@
 
 /* Begin PBXFileReference section */
 		5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+taskColor.swift"; sourceTree = "<group>"; };
+		5D1D60342406510B00464EA1 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
+		5D1D6036240654A200464EA1 /* Character+isEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+isEmoji.swift"; sourceTree = "<group>"; };
+		5D1D60382406554F00464EA1 /* String+isEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isEmoji.swift"; sourceTree = "<group>"; };
+		5D1D603A240655DA00464EA1 /* TaskFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFavorite.swift; sourceTree = "<group>"; };
 		5DCC712124062D84008DD255 /* StartWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StartWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DCC712424062D84008DD255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DCC712624062D84008DD255 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -120,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */,
+				5D1D6036240654A200464EA1 /* Character+isEmoji.swift */,
+				5D1D60382406554F00464EA1 /* String+isEmoji.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -196,6 +206,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCC712D24062D84008DD255 /* StartWatch.xcdatamodeld */,
+				5D1D60342406510B00464EA1 /* Task+Convenience.swift */,
+				5D1D603A240655DA00464EA1 /* TaskFavorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -368,10 +380,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D1D603B240655DA00464EA1 /* TaskFavorite.swift in Sources */,
 				5D1D603324064D7D00464EA1 /* UIColor+taskColor.swift in Sources */,
 				5DCC712F24062D84008DD255 /* StartWatch.xcdatamodeld in Sources */,
+				5D1D6037240654A200464EA1 /* Character+isEmoji.swift in Sources */,
 				5DCC712524062D84008DD255 /* AppDelegate.swift in Sources */,
+				5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */,
 				5DCC712724062D84008DD255 /* SceneDelegate.swift in Sources */,
+				5D1D60352406510B00464EA1 /* Task+Convenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
