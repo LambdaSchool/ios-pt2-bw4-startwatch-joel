@@ -10,11 +10,10 @@ import Foundation
 import CoreData
 
 extension TaskRecord {
-    convenience init(taskID: UUID, startTime: Date?, endTime: Date?, context: NSManagedObjectContext) {
+    convenience init(startTime: Date?, endTime: Date?, context: NSManagedObjectContext) {
         self.init(context: context)
         
         self.id = UUID()
-        self.taskID = taskID
         if let startTime = startTime {
             self.startTime = startTime
         } else {
