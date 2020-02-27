@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="Task" representedClassName="Task" syncable="YES" codeGenerationType="class">
+    <entity name="Task" representedClassName="Task" syncable="YES">
         <attribute name="color" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="emoji" attributeType="String" defaultValueString="❓"/>
         <attribute name="favorite" attributeType="Integer 16" minValueString="0" maxValueString="6" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" defaultValueString="Quick Task"/>
         <attribute name="running" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <relationship name="taskRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskRecord" inverseName="task" inverseEntity="TaskRecord"/>
     </entity>
-    <entity name="TaskRecord" representedClassName="TaskRecord" syncable="YES" codeGenerationType="class">
+    <entity name="TaskRecord" representedClassName="TaskRecord" syncable="YES">
         <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="taskID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Task" inverseName="taskRecords" inverseEntity="Task"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Task" positionX="-63" positionY="-18" width="128" height="133"/>
+        <element name="Task" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="TaskRecord" positionX="-54" positionY="18" width="128" height="103"/>
     </elements>
 </model>
