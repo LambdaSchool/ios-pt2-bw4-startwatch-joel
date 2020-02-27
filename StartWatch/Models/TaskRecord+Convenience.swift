@@ -11,7 +11,7 @@ import CoreData
 
 extension TaskRecord {
     convenience init(taskID: UUID, startTime: Date?, endTime: Date?, context: NSManagedObjectContext) {
-        self.init()
+        self.init(context: context)
         
         self.id = UUID()
         self.taskID = taskID

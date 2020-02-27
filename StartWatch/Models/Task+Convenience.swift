@@ -11,7 +11,7 @@ import CoreData
 
 extension Task {
     convenience init(name: String, color: TaskColor, emoji: String, context: NSManagedObjectContext) {
-        self.init()
+        self.init(context: context)
         self.id = UUID()
         self.name = name
         self.color = color.rawValue
