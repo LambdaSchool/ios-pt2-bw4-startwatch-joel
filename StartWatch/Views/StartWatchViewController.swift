@@ -10,10 +10,21 @@ import UIKit
 
 class StartWatchViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var banner: UIView!
+    @IBOutlet weak var lblElapsedTime: UILabel!
+    @IBOutlet weak var lblTaskName: UILabel!
+    @IBOutlet weak var lblTaskEmoji: UILabel!
+    @IBOutlet var favorites: [UIView]!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var btnStop: UIImageView!
+    
+    
+    // MARK: - Views
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,15 +37,52 @@ class StartWatchViewController: UIViewController {
         navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
-
-    /*
+    func updateViews() {
+        guard self.isViewLoaded else { return }
+    }
+    
+    // MARK: - Actions
+    @IBAction func bannerTapped(_ sender: Any) {
+    }
+    
+    @IBAction func favoriteTapped(_ sender: Any) {
+    }
+    
+    @IBAction func plusTapped(_ sender: Any) {
+    }
+    
+    @IBAction func editTapped(_ sender: Any) {
+    }
+    
+    @IBAction func stopTapped(_ sender: Any) {
+    }
+    
+    @IBAction func backArrowTapped(_ sender: Any) {
+    }
+    
+    @IBAction func quickTapped(_ sender: Any) {
+    }
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
     }
-    */
 
+}
+
+extension StartWatchViewController: UITableViewDelegate {
+    
+}
+
+extension StartWatchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
 }
