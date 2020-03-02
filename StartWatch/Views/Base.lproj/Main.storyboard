@@ -295,6 +295,7 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="banner" destination="76t-l6-fay" id="23U-Qb-5Ji"/>
+                        <outlet property="btnStop" destination="77C-bW-ZDD" id="4BX-Le-lMN"/>
                         <outlet property="lblElapsedTime" destination="uKW-q5-GHn" id="3Xs-so-btS"/>
                         <outlet property="lblTaskEmoji" destination="WRn-xz-ifv" id="A4f-K0-uzM"/>
                         <outlet property="lblTaskName" destination="ovt-En-orp" id="bGd-ED-P7M"/>
@@ -378,8 +379,16 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Task Detail" id="ZAk-tA-SFx">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NX5-7D-7R9"/>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vW7-GI-80z"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NX5-7D-7R9">
+                                            <connections>
+                                                <action selector="cancelTapped:" destination="Ruk-Ye-YS1" id="SBq-VX-FJC"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="vW7-GI-80z">
+                                            <connections>
+                                                <action selector="saveTapped:" destination="Ruk-Ye-YS1" id="Adm-TB-AvG"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -480,6 +489,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HWa-dj-UfF"/>
                     </view>
+                    <connections>
+                        <outlet property="btnSave" destination="vW7-GI-80z" id="DFf-0J-8Ay"/>
+                        <outlet property="lblTaskEmoji" destination="UfZ-Ft-nIH" id="NvX-lD-eA9"/>
+                        <outlet property="tableView" destination="2GJ-cc-IUe" id="1H3-Hl-G5X"/>
+                        <outlet property="taskColor" destination="cDj-cv-Qag" id="Dzf-bM-PuX"/>
+                        <outlet property="txtOptionalIdentifier" destination="Qt1-OS-FH4" id="Cte-09-4cv"/>
+                        <outlet property="txtTaskName" destination="AgL-XD-tY0" id="JFp-6K-Vo7"/>
+                        <outlet property="txtvTaskNotes" destination="tQx-ek-Uib" id="E2n-xO-ht4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Xd-89-FfB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
