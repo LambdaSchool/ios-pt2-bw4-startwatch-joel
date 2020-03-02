@@ -11,13 +11,15 @@ import UIKit
 class StartWatchViewController: UIViewController {
 
     // MARK: - Outlets
-    @IBOutlet weak var banner: UIView!
-    @IBOutlet weak var lblElapsedTime: UILabel!
-    @IBOutlet weak var lblTaskName: UILabel!
-    @IBOutlet weak var lblTaskEmoji: UILabel!
-    @IBOutlet var favorites: [UIView]!
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var btnStop: UIImageView!
+    @IBOutlet private weak var banner: UIView!
+    @IBOutlet private weak var lblElapsedTime: UILabel!
+    @IBOutlet private weak var lblTaskName: UILabel!
+    @IBOutlet private weak var lblTaskEmoji: UILabel!
+    @IBOutlet private var favorites: [UIView]!
+    @IBOutlet private weak var tableView: UITableView!
+    @IBOutlet private weak var btnStop: UIImageView!
+    
+    // MARK: - Properties
     
     
     // MARK: - Views
@@ -25,6 +27,7 @@ class StartWatchViewController: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        updateViews()
     }
     
     override func viewWillAppear(_ animated: Bool) {
