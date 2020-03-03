@@ -39,6 +39,7 @@
 		5DDD3C6B24062F0500123720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDD3C6A24062F0500123720 /* Assets.xcassets */; };
 		5DDD3C6E24062F0500123720 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */; };
 		5DDD3C7324062F0500123720 /* watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5DDD3C4D24062F0200123720 /* watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,7 @@
 		5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DDD3C6F24062F0500123720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DDD3C7024062F0500123720 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,6 +163,7 @@
 				5DDD3C4E24062F0200123720 /* watchOS */,
 				5DDD3C5D24062F0400123720 /* watchOS Extension */,
 				5DCC712224062D84008DD255 /* Products */,
+				5DF654A5240E0A7D00EDB9BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -272,6 +276,14 @@
 				5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DF654A5240E0A7D00EDB9BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,13 +616,13 @@
 				CODE_SIGN_ENTITLEMENTS = StartWatch/StartWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = StartWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -625,13 +637,13 @@
 				CODE_SIGN_ENTITLEMENTS = StartWatch/StartWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = StartWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
