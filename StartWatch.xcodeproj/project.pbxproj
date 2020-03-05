@@ -40,6 +40,7 @@
 		5DDD3C6E24062F0500123720 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */; };
 		5DDD3C7324062F0500123720 /* watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5DDD3C4D24062F0200123720 /* watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */; };
+		5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +125,7 @@
 		5DDD3C6F24062F0500123720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DDD3C7024062F0500123720 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStack+Convenience.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +241,7 @@
 				5D6C145924065C7000C21405 /* TaskRecord+Convenience.swift */,
 				5D1D603A240655DA00464EA1 /* TaskFavorite.swift */,
 				5DA9D620240763BA00E5C087 /* CoreDataStack.swift */,
+				5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				5DCC712524062D84008DD255 /* AppDelegate.swift in Sources */,
 				5D0129C8240DF78500C53F5C /* CloudKitConvertible.swift in Sources */,
 				5D6C145A24065C7000C21405 /* TaskRecord+Convenience.swift in Sources */,
+				5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */,
 				5DA9D629240768C600E5C087 /* TaskRecord+CoreDataProperties.swift in Sources */,
 				5DA9D626240768C600E5C087 /* Task+CoreDataClass.swift in Sources */,
 				5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */,
