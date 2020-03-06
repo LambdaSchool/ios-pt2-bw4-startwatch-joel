@@ -3,9 +3,9 @@
     <entity name="Task" representedClassName="Task" syncable="YES">
         <attribute name="color" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="emoji" attributeType="String" defaultValueString="❓"/>
-        <attribute name="favorite" attributeType="Integer 16" minValueString="0" maxValueString="6" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String" defaultValueString="Quick Task"/>
+        <attribute name="order" attributeType="Integer 16" minValueString="0" maxValueString="6" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="running" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <relationship name="taskRecords" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TaskRecord" inverseName="task" inverseEntity="TaskRecord"/>
     </entity>
@@ -22,6 +22,6 @@
     </entity>
     <elements>
         <element name="Task" positionX="-63" positionY="-18" width="128" height="148"/>
-        <element name="TaskRecord" positionX="-54" positionY="18" width="128" height="103"/>
+        <element name="TaskRecord" positionX="399.8984375" positionY="137.55078125" width="128" height="103"/>
     </elements>
 </model>
