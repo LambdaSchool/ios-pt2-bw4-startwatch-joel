@@ -17,6 +17,6 @@ extension Task {
         self.color = color.rawValue
         self.emoji = emoji.isSingleEmoji ? emoji : "❓"
         self.running = false
-        self.favorite = TaskFavorite.no.rawValue
+        self.order = UNORDERED
     }
 }

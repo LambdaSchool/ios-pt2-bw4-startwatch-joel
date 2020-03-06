@@ -11,7 +11,6 @@
 		5D1D603324064D7D00464EA1 /* UIColor+taskColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */; };
 		5D1D6037240654A200464EA1 /* Character+isEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D6036240654A200464EA1 /* Character+isEmoji.swift */; };
 		5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D60382406554F00464EA1 /* String+isEmoji.swift */; };
-		5D1D603B240655DA00464EA1 /* TaskFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D603A240655DA00464EA1 /* TaskFavorite.swift */; };
 		5D5D237A2408ADB500D790E0 /* StartWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D23792408ADB500D790E0 /* StartWatchViewController.swift */; };
 		5D5D237C2408ADEA00D790E0 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D237B2408ADEA00D790E0 /* TaskDetailViewController.swift */; };
 		5D6C145824065C5600C21405 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6C145724065C5600C21405 /* Task+Convenience.swift */; };
@@ -41,6 +40,7 @@
 		5DDD3C7324062F0500123720 /* watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5DDD3C4D24062F0200123720 /* watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */; };
 		5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */; };
+		5DF654AF2412F24B00EDB9BC /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AE2412F24B00EDB9BC /* TaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,7 +90,6 @@
 		5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+taskColor.swift"; sourceTree = "<group>"; };
 		5D1D6036240654A200464EA1 /* Character+isEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+isEmoji.swift"; sourceTree = "<group>"; };
 		5D1D60382406554F00464EA1 /* String+isEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isEmoji.swift"; sourceTree = "<group>"; };
-		5D1D603A240655DA00464EA1 /* TaskFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFavorite.swift; sourceTree = "<group>"; };
 		5D5D23792408ADB500D790E0 /* StartWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWatchViewController.swift; sourceTree = "<group>"; };
 		5D5D237B2408ADEA00D790E0 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		5D6C145724065C5600C21405 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
@@ -126,6 +125,7 @@
 		5DDD3C7024062F0500123720 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
 		5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStack+Convenience.swift"; sourceTree = "<group>"; };
+		5DF654AE2412F24B00EDB9BC /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +215,7 @@
 		5DDD3C4824062E6E00123720 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5DF654AE2412F24B00EDB9BC /* TaskController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -239,7 +240,6 @@
 				5DA9D624240768C600E5C087 /* TaskRecord+CoreDataClass.swift */,
 				5DA9D625240768C600E5C087 /* TaskRecord+CoreDataProperties.swift */,
 				5D6C145924065C7000C21405 /* TaskRecord+Convenience.swift */,
-				5D1D603A240655DA00464EA1 /* TaskFavorite.swift */,
 				5DA9D620240763BA00E5C087 /* CoreDataStack.swift */,
 				5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */,
 			);
@@ -422,7 +422,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D1D603B240655DA00464EA1 /* TaskFavorite.swift in Sources */,
 				5D1D603324064D7D00464EA1 /* UIColor+taskColor.swift in Sources */,
 				5DCC712F24062D84008DD255 /* StartWatch.xcdatamodeld in Sources */,
 				5D1D6037240654A200464EA1 /* Character+isEmoji.swift in Sources */,
@@ -438,6 +437,7 @@
 				5DA9D626240768C600E5C087 /* Task+CoreDataClass.swift in Sources */,
 				5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */,
 				5DA9D627240768C600E5C087 /* Task+CoreDataProperties.swift in Sources */,
+				5DF654AF2412F24B00EDB9BC /* TaskController.swift in Sources */,
 				5D5D237C2408ADEA00D790E0 /* TaskDetailViewController.swift in Sources */,
 				5DCC712724062D84008DD255 /* SceneDelegate.swift in Sources */,
 			);

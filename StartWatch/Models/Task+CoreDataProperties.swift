@@ -10,6 +10,7 @@
 import Foundation
 import CoreData
 
+let UNORDERED: Int16 = -1
 
 extension Task {
 
@@ -19,7 +20,7 @@ extension Task {
 
     @NSManaged public var color: Int16
     @NSManaged public var emoji: String?
-    @NSManaged public var favorite: Int16
+    @NSManaged public var order: Int16
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
     @NSManaged public var running: Bool
