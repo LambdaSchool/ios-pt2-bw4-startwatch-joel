@@ -16,6 +16,8 @@ class CoreDataStack {
         // Create a container that can load CloudKit-backed stores
         let container = NSPersistentCloudKitContainer(name: "StartWatch")
         
+        
+        
         // Enable history tracking and remote notifications
         guard let description = container.persistentStoreDescriptions.first else {
             fatalError("###\(#function): Failed to retrieve a persistent store description.")
@@ -29,9 +31,9 @@ class CoreDataStack {
             }
         }
         
-        /* This was in the example from Apple but not sure it's needed here
-         container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-         */
+        // This was in the example from Apple but not sure it's needed here
+        // container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        
         container.viewContext.transactionAuthor = appTransactionAuthorName
         
         // Pin the viewContext to the current generation token and set it to keep itself up to date with local changes.
@@ -41,6 +43,18 @@ class CoreDataStack {
         } catch {
             fatalError("###\(#function): Failed to pin viewContext to the current generation:\(error)")
         }
+        
+        // comment out this entire block if schema is initialized
+        do {
+            // Uncomment next line to do a dry run and print the CK records it'll make
+            // try container.initializeCloudKitSchema(options: [.dryRun, .printSchema])
+            // Uncomment next line to initialize your schema
+            try container.initializeCloudKitSchema()
+            print("Container should be initialized now")
+        } catch {
+            print("Unable to initialize CloudKit schema: \(error.localizedDescription)")
+        }
+        
         
         // Observe Core Data remote change notifications.
         NotificationCenter.default.addObserver(
@@ -158,24 +172,12 @@ extension CoreDataStack {
                   !transactions.isEmpty
                 else { return }
 
-            // Post transactions relevant to the current view.
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: .didFindRelevantTransactions, object: self, userInfo: ["transactions": transactions])
-            }
+//            // Post transactions relevant to the current view.
+//            DispatchQueue.main.async {
+//                NotificationCenter.default.post(name: .didFindRelevantTransactions, object: self, userInfo: ["transactions": transactions])
+//            }
 
-            // Deduplicate the new tags.
-            var newTagObjectIDs = [NSManagedObjectID]()
-            let tagEntityName = Tag.entity().name
-
-            for transaction in transactions where transaction.changes != nil {
-                for change in transaction.changes!
-                    where change.changedObjectID.entity.name == tagEntityName && change.changeType == .insert {
-                        newTagObjectIDs.append(change.changedObjectID)
-                }
-            }
-            if !newTagObjectIDs.isEmpty {
-                deduplicateAndWait(tagObjectIDs: newTagObjectIDs)
-            }
+            
             
             // Update the history token using the last transaction.
             lastHistoryToken = transactions.last!.token
