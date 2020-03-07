@@ -77,6 +77,13 @@ class TaskController {
         }
     }
     
+    // TODO
+    func checkAvailability(color: TaskColor, emoji: String) -> Bool {
+        // checks to see if this color + emoji combination has already been used
+        
+        return true
+    }
+    
     
     // MARK: - TaskRecords
     
@@ -147,6 +154,41 @@ class TaskController {
                 completion(error)
             }
             completion(nil)
+        }
+    }
+    
+    func stopRunningTasks() {
+        // TODO: Find all tasks with nil endDate and set endDate to now
+    }
+    
+    // MARK: - Quick Tasks
+    
+    func newQuickTask(context: NSManagedObjectContext = CoreDataStack.shared.mainContext, completion: @escaping (Task?, TaskRecord?, Error?) -> Void) {
+        let quickEmojis = ["🚀", "🏎", "🚅", "🐆", "🐰", "🐇", "⚡️", "☄️"]
+        var colorInteger: Int16
+        var quickEmojiIndex: Int
+        repeat {
+            colorInteger = Int16.random(in: TASK_COLOR_MIN...TASK_COLOR_MAX)
+            quickEmojiIndex = Int.random(in: 0..<quickEmojis.count)
+        } while checkAvailability(color: TaskColor(rawValue: colorInteger) ?? TaskColor.yellow, emoji: quickEmojis[quickEmojiIndex]) == false
+        
+        let time = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.setLocalizedDateFormatFromTemplate("MMM dd, HH:mm")
+        
+        let task = Task(name: "Quick Task \(dateFormatter.string(from: time))", color: TaskColor(rawValue: colorInteger)!, emoji: quickEmojis[quickEmojiIndex], context: context)
+        stopRunningTasks()
+        let record = TaskRecord(startTime: time, endTime: nil, context: context)
+        record.task = task
+        
+        context.perform {
+            do {
+                try CoreDataStack.shared.save(context: context)
+            } catch {
+                print("Unable to save Quick Task: \(error)")
+                completion(nil, nil, error)
+            }
+            completion(task, record, nil)
         }
     }
 }
