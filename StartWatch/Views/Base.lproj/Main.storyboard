@@ -243,17 +243,15 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="289.5" id="IsE-KH-0zV"/>
                                                 </constraints>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="vcE-DJ-uNq">
-                                                        <rect key="frame" x="0.0" y="28" width="334" height="43.5"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vcE-DJ-uNq" id="dhE-Md-b5q">
-                                                            <rect key="frame" x="0.0" y="0.0" width="334" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </prototypes>
                                             </tableView>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iwp-30-5z1">
+                                                <rect key="frame" x="334" y="13" width="21" height="22"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="list.dash" catalog="system"/>
+                                                <connections>
+                                                    <action selector="menuTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PqQ-7E-Lbw"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -580,5 +578,6 @@
         <image name="Quick" width="29" height="58"/>
         <image name="Startwatch with blank center" width="92" height="111"/>
         <image name="Stop" width="67" height="67"/>
+        <image name="list.dash" catalog="system" width="64" height="42"/>
     </resources>
 </document>
