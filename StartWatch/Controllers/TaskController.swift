@@ -22,7 +22,7 @@ class TaskController {
     private(set) var taskFetchRequest: NSFetchRequest<Task>
     private(set) var favoriteTasksFetchRequest: NSFetchRequest<Task>
     private(set) var notFavoriteTasksFetchRequest: NSFetchRequest<Task>
-    private(set) var runningTasksFetchRequest: NSFetchRequest<TaskRecord> = TaskRecord.fetchRequest()
+    private(set) var runningTasksFetchRequest: NSFetchRequest<TaskRecord>
     private(set) var tasks: [Task] = []
     private(set) var favoriteTasks: [Task] = []
     private(set) var notFavoriteTasks: [Task] = []
@@ -38,9 +38,13 @@ class TaskController {
         favoriteTasksFetchRequest = fetchRequestFavorites
         notFavoriteTasksFetchRequest = fetchRequestNotFavorites
         
-        var predicate = NSPredicate(format: "date = $DATE")
+        runningTasksFetchRequest = TaskRecord.fetchRequest()
+        var predicate = NSPredicate(format: "endTime = $DATE")
         predicate = predicate.withSubstitutionVariables(["DATE" : NSNull()])
         runningTasksFetchRequest.predicate = predicate
+        runningTasksFetchRequest.sortDescriptors = [
+            NSSortDescriptor(key: "startTime", ascending: true)
+        ]
         
         fetchTasks()
     }
@@ -65,9 +69,45 @@ class TaskController {
         if runningTaskRecords.count == 0 {
             return nil
         } else if runningTaskRecords.count > 1 {
-            // TODO: Handle multiple running tasks
-            // should end older tasks with newer start time
-            return nil  // should return the latest started task
+            // There should never be more than one running task
+            // If there are, we need to end the extras
+            
+            let allTaskRecordsAfterDateFetchRequest: NSFetchRequest<TaskRecord> = TaskRecord.fetchRequest()
+            allTaskRecordsAfterDateFetchRequest.sortDescriptors = [
+                NSSortDescriptor(key: "startTime", ascending: true)
+            ]
+            
+            for running in runningTaskRecords {
+                var allTaskRecordsAfterDate: [TaskRecord] = []
+                guard let startTime = running.startTime else { continue }
+                
+                // find task records that begin after this running task record
+                let predicate = NSPredicate(format: "startTime > %@", startTime as NSDate)
+                allTaskRecordsAfterDateFetchRequest.predicate = predicate
+                do {
+                    allTaskRecordsAfterDate = try CoreDataStack.shared.mainContext.fetch(allTaskRecordsAfterDateFetchRequest)
+                } catch {
+                    print("Unable to search for task records occurring after running task: \(error)")
+                    continue
+                }
+                
+                // apply the start time of the next record to the end time of the running record
+                if allTaskRecordsAfterDate.count >= 1 {
+                    running.endTime = allTaskRecordsAfterDate[0].startTime
+                }
+            }
+            
+            do {
+                try CoreDataStack.shared.mainContext.save()
+            } catch {
+                print("Unable to save after ending tasks: \(error)")
+            }
+            
+            if runningTaskRecords.last?.endTime == nil {
+                return runningTaskRecords.last?.task
+            } else {
+                return nil
+            }
         }
         
         return runningTaskRecords[0].task
