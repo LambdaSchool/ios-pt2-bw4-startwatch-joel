@@ -188,9 +188,22 @@ class TaskController {
     func checkAvailability(color: TaskColor, emoji: String) -> Bool {
         // checks to see if this color + emoji combination has already been used
         
-        // TODO: Implement checkAvailability
+        let availableFetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        let predicate = NSPredicate(format: "color == %f && emoji == %@", color.rawValue, emoji)
+        availableFetchRequest.predicate = predicate
         
-        return true
+        var hits: [Task] = []
+        do {
+            hits = try CoreDataStack.shared.mainContext.fetch(availableFetchRequest)
+        } catch {
+            print("Couldn't fetch tasks to check availability: \(error)")
+        }
+        
+        if hits.count > 0 {
+            return false
+        } else {
+            return true
+        }
     }
     
     
