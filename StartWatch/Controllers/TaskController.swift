@@ -280,7 +280,7 @@ class TaskController {
     }
     
     func stopRunningTasks() {
-        // TODO: Find all tasks with nil endDate and set endDate to now
+        // Find all tasks with nil endDate and set endDate to now
         do {
             runningTaskRecords = try CoreDataStack.shared.mainContext.fetch(runningTasksFetchRequest)
         } catch {
@@ -293,6 +293,7 @@ class TaskController {
         
         do {
             try CoreDataStack.shared.mainContext.save()
+            runningTaskRecords.removeAll()
         } catch {
             print("Unable to save after ending tasks: \(error)")
         }
