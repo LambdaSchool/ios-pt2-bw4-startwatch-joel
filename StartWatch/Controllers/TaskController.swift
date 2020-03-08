@@ -12,24 +12,36 @@ import UIKit
 
 enum FetchRequestTemplates: String {
     case AllTasksFetchRequest
+    case FavoriteTasksFetchRequest
+    case NotFavoriteTasksFetchRequest
 }
 
 class TaskController {
     
-    var taskFetchRequest: NSFetchRequest<Task>
+    private var taskFetchRequest: NSFetchRequest<Task>
+    private var favoriteTasksFetchRequest: NSFetchRequest<Task>
+    private var notFavoriteTasksFetchRequest: NSFetchRequest<Task>
     private(set) var tasks: [Task] = []
+    private(set) var favoriteTasks: [Task] = []
+    private(set) var notFavoriteTasks: [Task] = []
     
     init() {
         guard let model = CoreDataStack.shared.mainContext.persistentStoreCoordinator?.managedObjectModel,
-            let fetchRequest = model.fetchRequestTemplate(forName: FetchRequestTemplates.AllTasksFetchRequest.rawValue) as? NSFetchRequest<Task>
+            let fetchRequest = model.fetchRequestTemplate(forName: FetchRequestTemplates.AllTasksFetchRequest.rawValue) as? NSFetchRequest<Task>,
+            let fetchRequestFavorites = model.fetchRequestTemplate(forName: FetchRequestTemplates.FavoriteTasksFetchRequest.rawValue) as? NSFetchRequest<Task>,
+            let fetchRequestNotFavorites = model.fetchRequestTemplate(forName: FetchRequestTemplates.NotFavoriteTasksFetchRequest.rawValue) as? NSFetchRequest<Task>
             else { fatalError("Could not initialize fetch request") }
         taskFetchRequest = fetchRequest
-        fetchAndReloadTasks()
+        favoriteTasksFetchRequest = fetchRequestFavorites
+        notFavoriteTasksFetchRequest = fetchRequestNotFavorites
+        fetchTasks()
     }
     
-    func fetchAndReloadTasks() {
+    func fetchTasks() {
         do {
             tasks = try CoreDataStack.shared.mainContext.fetch(taskFetchRequest)
+            favoriteTasks = try CoreDataStack.shared.mainContext.fetch(favoriteTasksFetchRequest)
+            notFavoriteTasks = try CoreDataStack.shared.mainContext.fetch(notFavoriteTasksFetchRequest)
         } catch let error as NSError {
             print("Could not fetch tasks: \(error), \(error.userInfo)")
         }
