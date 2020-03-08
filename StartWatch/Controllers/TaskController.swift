@@ -10,7 +10,30 @@ import Foundation
 import CoreData
 import UIKit
 
+enum FetchRequestTemplates: String {
+    case AllTasksFetchRequest
+}
+
 class TaskController {
+    
+    var taskFetchRequest: NSFetchRequest<Task>
+    private(set) var tasks: [Task] = []
+    
+    init() {
+        guard let model = CoreDataStack.shared.mainContext.persistentStoreCoordinator?.managedObjectModel,
+            let fetchRequest = model.fetchRequestTemplate(forName: FetchRequestTemplates.AllTasksFetchRequest.rawValue) as? NSFetchRequest<Task>
+            else { fatalError("Could not initialize fetch request") }
+        taskFetchRequest = fetchRequest
+        fetchAndReloadTasks()
+    }
+    
+    func fetchAndReloadTasks() {
+        do {
+            tasks = try CoreDataStack.shared.mainContext.fetch(taskFetchRequest)
+        } catch let error as NSError {
+            print("Could not fetch tasks: \(error), \(error.userInfo)")
+        }
+    }
     
     // MARK: - Tasks
     
@@ -77,9 +100,10 @@ class TaskController {
         }
     }
     
-    // TODO
     func checkAvailability(color: TaskColor, emoji: String) -> Bool {
         // checks to see if this color + emoji combination has already been used
+        
+        // TODO: Implement checkAvailability
         
         return true
     }

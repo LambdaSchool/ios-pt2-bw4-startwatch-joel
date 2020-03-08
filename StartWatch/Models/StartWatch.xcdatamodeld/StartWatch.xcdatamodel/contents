@@ -20,6 +20,7 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <fetchRequest name="AllTasksFetchRequest" entity="Task"/>
     <elements>
         <element name="Task" positionX="-63" positionY="-18" width="128" height="148"/>
         <element name="TaskRecord" positionX="399.8984375" positionY="137.55078125" width="128" height="103"/>
