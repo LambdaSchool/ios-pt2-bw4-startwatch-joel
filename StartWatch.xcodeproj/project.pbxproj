@@ -41,6 +41,7 @@
 		5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */; };
 		5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */; };
 		5DF654AF2412F24B00EDB9BC /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AE2412F24B00EDB9BC /* TaskController.swift */; };
+		5DF654B324158B7F00EDB9BC /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654B224158B7F00EDB9BC /* TaskTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +127,7 @@
 		5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStack+Convenience.swift"; sourceTree = "<group>"; };
 		5DF654AE2412F24B00EDB9BC /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
+		5DF654B224158B7F00EDB9BC /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				5DCC712A24062D84008DD255 /* Main.storyboard */,
 				5D5D23792408ADB500D790E0 /* StartWatchViewController.swift */,
 				5D5D237B2408ADEA00D790E0 /* TaskDetailViewController.swift */,
+				5DF654B224158B7F00EDB9BC /* TaskTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -433,6 +436,7 @@
 				5D0129C8240DF78500C53F5C /* CloudKitConvertible.swift in Sources */,
 				5D6C145A24065C7000C21405 /* TaskRecord+Convenience.swift in Sources */,
 				5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */,
+				5DF654B324158B7F00EDB9BC /* TaskTableViewCell.swift in Sources */,
 				5DA9D629240768C600E5C087 /* TaskRecord+CoreDataProperties.swift in Sources */,
 				5DA9D626240768C600E5C087 /* Task+CoreDataClass.swift in Sources */,
 				5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */,
