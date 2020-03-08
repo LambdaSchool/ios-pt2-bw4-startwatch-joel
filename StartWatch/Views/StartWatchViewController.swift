@@ -13,7 +13,9 @@ class StartWatchViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet private weak var banner: UIView!
+    @IBOutlet private weak var bannerLabelView: UIView!
     @IBOutlet private weak var lblElapsedTime: UILabel!
+    @IBOutlet private weak var lblCurrentTask: UILabel!
     @IBOutlet private weak var lblTaskName: UILabel!
     @IBOutlet private weak var lblTaskEmoji: UILabel!
     @IBOutlet private var favorites: [UIView]!
@@ -55,6 +57,25 @@ class StartWatchViewController: UIViewController {
     
     func updateViews() {
         guard self.isViewLoaded else { return }
+        
+        if let runningTask = taskController.getRunningTask() {
+            lblCurrentTask.text = "Current task:"
+            lblTaskName.text = runningTask.name
+            lblTaskEmoji.text = runningTask.emoji
+            bannerLabelView.backgroundColor = UIColor.taskColor(TaskColor(rawValue: runningTask.color) ?? TaskColor.white)
+            let totalMinutes = taskController.getRunningTimeInMinutes()
+            let hours = totalMinutes / 60
+            let minutes = totalMinutes % 60
+            let minutesNS = NSNumber(value: minutes)
+            let numberFormatter = NumberFormatter()
+            numberFormatter.minimumIntegerDigits = 2
+            lblElapsedTime.text = "\(hours)h \(numberFormatter.string(from: minutesNS) ?? "00")m"
+        } else {
+            lblCurrentTask.text = "No running tasks"
+            lblTaskName.text = "Tap to view reports"
+            lblTaskEmoji.text = ""
+            lblElapsedTime.text = ""
+        }
         
         // clear favorites
         for taskSquare in favorites {

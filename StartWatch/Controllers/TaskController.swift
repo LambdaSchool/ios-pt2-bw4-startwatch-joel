@@ -14,6 +14,7 @@ enum FetchRequestTemplates: String {
     case AllTasksFetchRequest
     case FavoriteTasksFetchRequest
     case NotFavoriteTasksFetchRequest
+//    case RunningTasksFetchRequest
 }
 
 class TaskController {
@@ -21,9 +22,11 @@ class TaskController {
     private(set) var taskFetchRequest: NSFetchRequest<Task>
     private(set) var favoriteTasksFetchRequest: NSFetchRequest<Task>
     private(set) var notFavoriteTasksFetchRequest: NSFetchRequest<Task>
+    private(set) var runningTasksFetchRequest: NSFetchRequest<TaskRecord> = TaskRecord.fetchRequest()
     private(set) var tasks: [Task] = []
     private(set) var favoriteTasks: [Task] = []
     private(set) var notFavoriteTasks: [Task] = []
+    private(set) var runningTaskRecords: [TaskRecord] = []
     
     init() {
         guard let model = CoreDataStack.shared.mainContext.persistentStoreCoordinator?.managedObjectModel,
@@ -34,6 +37,11 @@ class TaskController {
         taskFetchRequest = fetchRequest
         favoriteTasksFetchRequest = fetchRequestFavorites
         notFavoriteTasksFetchRequest = fetchRequestNotFavorites
+        
+        var predicate = NSPredicate(format: "date = $DATE")
+        predicate = predicate.withSubstitutionVariables(["DATE" : NSNull()])
+        runningTasksFetchRequest.predicate = predicate
+        
         fetchTasks()
     }
     
@@ -45,6 +53,31 @@ class TaskController {
         } catch let error as NSError {
             print("Could not fetch tasks: \(error), \(error.userInfo)")
         }
+    }
+    
+    @discardableResult func getRunningTask() -> Task? {
+        do {
+            runningTaskRecords = try CoreDataStack.shared.mainContext.fetch(runningTasksFetchRequest)
+        } catch {
+            print("Could not fetch running tasks: \(error)")
+        }
+        
+        if runningTaskRecords.count == 0 {
+            return nil
+        } else if runningTaskRecords.count > 1 {
+            // TODO: Handle multiple running tasks
+            // should end older tasks with newer start time
+            return nil  // should return the latest started task
+        }
+        
+        return runningTaskRecords[0].task
+    }
+    
+    func getRunningTimeInMinutes() -> Int {
+        getRunningTask()    // make sure the running tasks are updated
+        guard let startTime = runningTaskRecords[0].startTime else { return 0 }
+        let taskDuration = Date().timeIntervalSince(startTime)
+        return Int(taskDuration / 60)
     }
     
     // MARK: - Tasks
