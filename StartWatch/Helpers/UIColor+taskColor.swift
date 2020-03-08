@@ -28,7 +28,7 @@ let TASK_COLOR_MIN: Int16 = 0
 let TASK_COLOR_MAX: Int16 = 11
 
 extension UIColor {
-    func taskColor(_ taskColor: TaskColor) -> UIColor {
+    static func taskColor(_ taskColor: TaskColor) -> UIColor {
         let color: UIColor
         
         switch taskColor {

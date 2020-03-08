@@ -18,9 +18,9 @@ enum FetchRequestTemplates: String {
 
 class TaskController {
     
-    private var taskFetchRequest: NSFetchRequest<Task>
-    private var favoriteTasksFetchRequest: NSFetchRequest<Task>
-    private var notFavoriteTasksFetchRequest: NSFetchRequest<Task>
+    private(set) var taskFetchRequest: NSFetchRequest<Task>
+    private(set) var favoriteTasksFetchRequest: NSFetchRequest<Task>
+    private(set) var notFavoriteTasksFetchRequest: NSFetchRequest<Task>
     private(set) var tasks: [Task] = []
     private(set) var favoriteTasks: [Task] = []
     private(set) var notFavoriteTasks: [Task] = []
