@@ -343,7 +343,9 @@
                     <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="banner" destination="76t-l6-fay" id="23U-Qb-5Ji"/>
+                        <outlet property="bannerLabelView" destination="YOT-8f-hI1" id="p2T-iR-FV3"/>
                         <outlet property="btnStop" destination="77C-bW-ZDD" id="4BX-Le-lMN"/>
+                        <outlet property="lblCurrentTask" destination="9no-9o-UhD" id="mVg-hk-bFs"/>
                         <outlet property="lblElapsedTime" destination="uKW-q5-GHn" id="3Xs-so-btS"/>
                         <outlet property="lblTaskEmoji" destination="WRn-xz-ifv" id="A4f-K0-uzM"/>
                         <outlet property="lblTaskName" destination="ovt-En-orp" id="bGd-ED-P7M"/>
