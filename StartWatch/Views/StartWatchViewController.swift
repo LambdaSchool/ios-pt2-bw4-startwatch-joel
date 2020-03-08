@@ -98,6 +98,9 @@ class StartWatchViewController: UIViewController {
     @IBAction func bannerTapped(_ sender: Any) {
     }
     
+    @IBAction func menuTapped(_ sender: Any) {
+    }
+    
     @IBAction func favoriteTapped(_ sender: Any) {
     }
     
