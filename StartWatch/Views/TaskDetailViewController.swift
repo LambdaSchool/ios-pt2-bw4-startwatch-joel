@@ -22,7 +22,7 @@ class TaskDetailViewController: UIViewController {
     
     // MARK: - Properties
     
-//    var taskController
+    var taskController: TaskController?
     var task: Task?
     
     

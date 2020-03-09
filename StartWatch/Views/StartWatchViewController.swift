@@ -73,13 +73,13 @@ class StartWatchViewController: UIViewController {
         } else {
             lblCurrentTask.text = "No running tasks"
             lblTaskName.text = "Tap to view reports"
-            lblTaskEmoji.text = ""
+            lblTaskEmoji.text = "⏹"
             lblElapsedTime.text = ""
         }
         
         // clear favorites
         for taskSquare in favorites {
-            taskSquare.backgroundColor = .systemGray
+            taskSquare.backgroundColor = #colorLiteral(red: 0.914622128, green: 0.9147503972, blue: 0.9145815969, alpha: 1)
         }
         for taskSquareLabel in favoritesLabels {
             taskSquareLabel.text = ""
@@ -104,12 +104,6 @@ class StartWatchViewController: UIViewController {
     @IBAction func favoriteTapped(_ sender: Any) {
     }
     
-    @IBAction func plusTapped(_ sender: Any) {
-    }
-    
-    @IBAction func editTapped(_ sender: Any) {
-    }
-    
     @IBAction func stopTapped(_ sender: Any) {
     }
     
@@ -121,10 +115,14 @@ class StartWatchViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "modalAddTask" {
+            guard let vc = segue.destination as? TaskDetailViewController else { return }
+            vc.taskController = taskController
+        } else if segue.identifier == "showEdit" {
+            guard let vc = segue.destination as? TaskTableViewController else { return }
+            vc.taskController = taskController
+        }
     }
-
 }
 
 extension StartWatchViewController: UITableViewDelegate {

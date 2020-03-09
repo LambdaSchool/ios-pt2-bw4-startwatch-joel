@@ -54,3 +54,13 @@ extension Task {
     @NSManaged public func removeFromTaskRecords(_ values: NSSet)
 
 }
+
+extension Task {
+    var type: String {
+        if order < 6 {
+            return "Favorites"
+        } else {
+            return "Other tasks"
+        }
+    }
+}
