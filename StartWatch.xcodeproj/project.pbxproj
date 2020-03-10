@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D0129C8240DF78500C53F5C /* CloudKitConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D0129C7240DF78500C53F5C /* CloudKitConvertible.swift */; };
 		5D1D603324064D7D00464EA1 /* UIColor+taskColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */; };
 		5D1D6037240654A200464EA1 /* Character+isEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D6036240654A200464EA1 /* Character+isEmoji.swift */; };
 		5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D60382406554F00464EA1 /* String+isEmoji.swift */; };
-		5D1D603B240655DA00464EA1 /* TaskFavorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D1D603A240655DA00464EA1 /* TaskFavorite.swift */; };
+		5D5D237A2408ADB500D790E0 /* StartWatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D23792408ADB500D790E0 /* StartWatchViewController.swift */; };
+		5D5D237C2408ADEA00D790E0 /* TaskDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5D237B2408ADEA00D790E0 /* TaskDetailViewController.swift */; };
 		5D6C145824065C5600C21405 /* Task+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6C145724065C5600C21405 /* Task+Convenience.swift */; };
 		5D6C145A24065C7000C21405 /* TaskRecord+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6C145924065C7000C21405 /* TaskRecord+Convenience.swift */; };
 		5DA9D621240763BA00E5C087 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA9D620240763BA00E5C087 /* CoreDataStack.swift */; };
@@ -36,6 +38,9 @@
 		5DDD3C6B24062F0500123720 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDD3C6A24062F0500123720 /* Assets.xcassets */; };
 		5DDD3C6E24062F0500123720 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */; };
 		5DDD3C7324062F0500123720 /* watchOS.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 5DDD3C4D24062F0200123720 /* watchOS.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */; };
+		5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */; };
+		5DF654AF2412F24B00EDB9BC /* TaskController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF654AE2412F24B00EDB9BC /* TaskController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,10 +86,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5D0129C7240DF78500C53F5C /* CloudKitConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudKitConvertible.swift; sourceTree = "<group>"; };
 		5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+taskColor.swift"; sourceTree = "<group>"; };
 		5D1D6036240654A200464EA1 /* Character+isEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+isEmoji.swift"; sourceTree = "<group>"; };
 		5D1D60382406554F00464EA1 /* String+isEmoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+isEmoji.swift"; sourceTree = "<group>"; };
-		5D1D603A240655DA00464EA1 /* TaskFavorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskFavorite.swift; sourceTree = "<group>"; };
+		5D5D23792408ADB500D790E0 /* StartWatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartWatchViewController.swift; sourceTree = "<group>"; };
+		5D5D237B2408ADEA00D790E0 /* TaskDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailViewController.swift; sourceTree = "<group>"; };
 		5D6C145724065C5600C21405 /* Task+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task+Convenience.swift"; sourceTree = "<group>"; };
 		5D6C145924065C7000C21405 /* TaskRecord+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskRecord+Convenience.swift"; sourceTree = "<group>"; };
 		5DA9D620240763BA00E5C087 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -116,6 +123,9 @@
 		5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DDD3C6F24062F0500123720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DDD3C7024062F0500123720 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreDataStack+Convenience.swift"; sourceTree = "<group>"; };
+		5DF654AE2412F24B00EDB9BC /* TaskController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF654A7240E0A7D00EDB9BC /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +153,7 @@
 				5D1D603224064D7D00464EA1 /* UIColor+taskColor.swift */,
 				5D1D6036240654A200464EA1 /* Character+isEmoji.swift */,
 				5D1D60382406554F00464EA1 /* String+isEmoji.swift */,
+				5D0129C7240DF78500C53F5C /* CloudKitConvertible.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -153,6 +165,7 @@
 				5DDD3C4E24062F0200123720 /* watchOS */,
 				5DDD3C5D24062F0400123720 /* watchOS Extension */,
 				5DCC712224062D84008DD255 /* Products */,
+				5DF654A5240E0A7D00EDB9BC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -202,6 +215,7 @@
 		5DDD3C4824062E6E00123720 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5DF654AE2412F24B00EDB9BC /* TaskController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -210,6 +224,8 @@
 			isa = PBXGroup;
 			children = (
 				5DCC712A24062D84008DD255 /* Main.storyboard */,
+				5D5D23792408ADB500D790E0 /* StartWatchViewController.swift */,
+				5D5D237B2408ADEA00D790E0 /* TaskDetailViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,8 +240,8 @@
 				5DA9D624240768C600E5C087 /* TaskRecord+CoreDataClass.swift */,
 				5DA9D625240768C600E5C087 /* TaskRecord+CoreDataProperties.swift */,
 				5D6C145924065C7000C21405 /* TaskRecord+Convenience.swift */,
-				5D1D603A240655DA00464EA1 /* TaskFavorite.swift */,
 				5DA9D620240763BA00E5C087 /* CoreDataStack.swift */,
+				5DF654AC24109FAF00EDB9BC /* CoreDataStack+Convenience.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -263,6 +279,14 @@
 				5DDD3C6D24062F0500123720 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5DF654A5240E0A7D00EDB9BC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5DF654A6240E0A7D00EDB9BC /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -398,19 +422,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D1D603B240655DA00464EA1 /* TaskFavorite.swift in Sources */,
 				5D1D603324064D7D00464EA1 /* UIColor+taskColor.swift in Sources */,
 				5DCC712F24062D84008DD255 /* StartWatch.xcdatamodeld in Sources */,
 				5D1D6037240654A200464EA1 /* Character+isEmoji.swift in Sources */,
 				5D6C145824065C5600C21405 /* Task+Convenience.swift in Sources */,
 				5DA9D628240768C600E5C087 /* TaskRecord+CoreDataClass.swift in Sources */,
+				5D5D237A2408ADB500D790E0 /* StartWatchViewController.swift in Sources */,
 				5DA9D621240763BA00E5C087 /* CoreDataStack.swift in Sources */,
 				5DCC712524062D84008DD255 /* AppDelegate.swift in Sources */,
+				5D0129C8240DF78500C53F5C /* CloudKitConvertible.swift in Sources */,
 				5D6C145A24065C7000C21405 /* TaskRecord+Convenience.swift in Sources */,
+				5DF654AD24109FAF00EDB9BC /* CoreDataStack+Convenience.swift in Sources */,
 				5DA9D629240768C600E5C087 /* TaskRecord+CoreDataProperties.swift in Sources */,
 				5DA9D626240768C600E5C087 /* Task+CoreDataClass.swift in Sources */,
 				5D1D60392406554F00464EA1 /* String+isEmoji.swift in Sources */,
 				5DA9D627240768C600E5C087 /* Task+CoreDataProperties.swift in Sources */,
+				5DF654AF2412F24B00EDB9BC /* TaskController.swift in Sources */,
+				5D5D237C2408ADEA00D790E0 /* TaskDetailViewController.swift in Sources */,
 				5DCC712724062D84008DD255 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,13 +620,13 @@
 				CODE_SIGN_ENTITLEMENTS = StartWatch/StartWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = StartWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -613,13 +641,13 @@
 				CODE_SIGN_ENTITLEMENTS = StartWatch/StartWatch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				INFOPLIST_FILE = StartWatch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
@@ -633,7 +661,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -641,7 +669,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -657,7 +685,7 @@
 				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"watchOS Extension/Preview Content\"";
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "watchOS Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -665,7 +693,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -681,10 +709,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				IBSC_MODULE = watchOS_Extension;
 				INFOPLIST_FILE = watchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -700,10 +728,10 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3C2X999TFX;
+				DEVELOPMENT_TEAM = VXUQXR6S56;
 				IBSC_MODULE = watchOS_Extension;
 				INFOPLIST_FILE = watchOS/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.julltron.StartWatch.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lambdaschool.StartWatch.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
